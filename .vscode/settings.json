@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+    "osinfo.h": "c",
+    "singleinclude.h": "c",
+    "physics.h": "c",
+    "math.h": "c",
+    "chemistry.h": "c"
+  }
+}
