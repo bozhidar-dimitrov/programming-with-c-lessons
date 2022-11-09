@@ -7,4 +7,9 @@
 # Unignore all dirs
 !*/
 
+*.out
+*.o
+*.a
+
 tasks.json
+settings.json
