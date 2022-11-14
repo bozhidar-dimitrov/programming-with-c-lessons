@@ -7,6 +7,8 @@
 # Unignore all dirs
 !*/
 
+!Makefile
+
 *.out
 *.o
 *.a
