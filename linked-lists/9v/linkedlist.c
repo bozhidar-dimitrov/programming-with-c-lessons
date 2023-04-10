@@ -87,3 +87,9 @@ void set(LinkedList * list, int index, double value) {
   struct ListNode * node = get(list, index);
   node->value = value;
 }
+
+void release(LinkedList * list) {
+  while (list->size > 0) {
+    popback(list);
+  }
+}

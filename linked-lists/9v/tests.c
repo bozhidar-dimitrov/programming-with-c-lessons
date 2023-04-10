@@ -45,5 +45,8 @@ int main(void) {
   set(&list, 2, 17);
   printlist(&list);
 
+  release(&list);
+  printlist(&list);
+
   return 0;
 }
