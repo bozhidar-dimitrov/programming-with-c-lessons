@@ -1,0 +1,3 @@
+Dimitar 1 5.5
+Ivan 2 3.75
+Rali 3 4.25

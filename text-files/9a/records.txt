@@ -1,0 +1,4 @@
+Ivana 1 5.75
+Martin 2 5.35
+Nikola 3 5.28
+Lili 4 4.35
