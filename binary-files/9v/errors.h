@@ -1,0 +1,7 @@
+#ifndef ERRORS_H
+#define ERRORS_H
+
+#define CANNOT_OPEN_INPUT_FILE 1
+#define CANNOT_ALLOCATE_MEMORY 2
+
+#endif
