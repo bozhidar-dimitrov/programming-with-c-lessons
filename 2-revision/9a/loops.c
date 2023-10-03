@@ -15,7 +15,5 @@ int main(void) {
 
   }
 
-  while ('c')
-
   return 0;
 }
