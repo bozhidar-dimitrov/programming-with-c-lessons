@@ -1,0 +1,33 @@
+Обърнете внимание, че в линукс изпълнимите файлове са с разширение .out докато в windows разширение е .exe
+Компилиране на код "test.c"
+  gcc test.c 
+Изпълняване на получената програма:
+  ./a.out
+Компилиране на код до получаване на изпълним файл "test.out"
+  gcc test.c -o test.out
+Принтиране на версията на компилатора:
+  gcc --version
+Принтира ръководство за компилатора:
+  gcc --help
+Изпълнява само препроцесинга на файлове и премахва linemarkers:
+  gcc -E -P original.c -o processed.c
+Изпълнява само препроцесинга на файлове без да маха linemarkers:
+  gcc -E original.c -o processed.c
+Изпълнява първите две стъпки от процеса на компилация: препроцесинг и компилация:
+  gcc -S original.c -o assembly.s
+Изпълнява първите три стъпки от процеса на компилация - създава обектен файл с машинен код: 
+  gcc -c original.c -o machineCode.o
+Свързване на сорс файл - вариант 1 - чрез обектен файл:
+  gcc myprogram.c math.o -o myprogram.out
+Свързване на сорс файл - вариант 2 - чрез сорс файл:
+  gcc myprogram.c math.c -o myprogram2.out
+Свързване на сорс файл - вариант 3 - чрез библиотека:
+  Създаване на статична библиотека:
+    ar rcs libmath.a math.o
+  Свързване на статичната библиотека:
+    gcc myprogram.c -L/home/bozhidar/Workspace/Personal/teaching/tues/c-programming/programming-with-c
+-lessons/7-compilation/9v -lmath -o myprogram.out
+  Свързване на библиотеката стандартната библиотека libm, в която се намира pow функцията:
+    gcc myprogram.c -lm -o myprogram.out
+
+
