@@ -47,11 +47,13 @@ int main(void) {
   //0000 0001 6 ^ 7 == 1
   printf("c3:%u\n", c3);
 
+  //Bitwise left shift
   unsigned char c4 = a << 2;
   //0000 0110
   //0001 1000 6 << 2 == 24
   printf("c4:%u\n", c4);
 
+  //Bitwise right shift
   unsigned char c5 = a >> 2; 
   //0000 0110
   //0000 0001 6 >> 2 == 1

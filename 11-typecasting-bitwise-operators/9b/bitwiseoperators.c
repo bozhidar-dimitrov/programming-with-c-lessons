@@ -15,34 +15,40 @@ int main(void) {
   //0000 0111
   int b = 7;
 
+  //Bitwise AND
   int c = a & b;
   //0000 0110
   //0000 0111
   //0000 0110 = 6 & 7 == 6
   printf("C:%d\n",c);
 
+  //Bitwise OR
   int c1 = a | b;
   //0000 0110
   //0000 0111
   //0000 0111 = 6 | 7 == 7
   printf("c1:%d\n", c1);
 
+  //Bitwise negation (inverter)
   unsigned char c2 = ~a;
   //0000 0110
   //1111 1001 == 249
   printf("c2:%u\n", c2);
 
+  //Bitwise XOR
   int c3 = a ^ b;
   //0000 0110
   //0000 0111
   //0000 0001 6 ^ 7 == 1
   printf("c3:%d\n", c3);
 
+  //Bitwise left shift
   unsigned char c4 = a << 2; 
   //0000 0110
   //0001 1000 6 << 2 == 24
   printf("c4:%d\n", c4);
 
+  //Bitwise right shift
   unsigned char c5 = a >> 2; 
   //0000 0110
   //0000 0001 6 >> 2 == 1

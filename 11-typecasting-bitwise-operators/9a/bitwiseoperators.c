@@ -2,56 +2,68 @@
 
 int main(void) {
 
-  //Arithmetic - +, -, /, %, *
-  //Logical operators = &&, ||, !
-  //Comparison = >, <, !=, ==, <=, >=
-  //Ternary operators = a > b ? a : b;
-  //Size - sizeof
-  //Bitwise operators: &,|,~,^,<<,>>
+  //Assignement - =, +=, -=, *=, /=, --,++
+  //Arithmetic operators = *,/,-,+,%
+  //Comparison operators = <=,>=,<,>,==,!=
+  //Logical operators = &&,||,!
+  //Ternary operators (a > b) ? a : b
+  //Bitwise - &,|,~,^,<<.>>
 
-  char a = 6;
-  //0000 0110 - 6 in binary
+  //0000 0110
+  int a = 6;
 
-  char b = 7;
-  //0000 0111 - 7 in binary
-
-  char c = a & b;
-  //0000 0110 
   //0000 0111
-  //0000 0110 - a & b; = 6 
-  printf("c:%d\n", c);
+  int b = 7;
 
-  char c2 = a | b;
-  //0000 0110 
+  //Bitwise AND
+  int c = a & b;
+  //0000 0110
   //0000 0111
-  //0000 0111 - a | b;
-  printf("c2:%d\n", c2);
+  //0000 0110 = 6 & 7 == 6
+  printf("C:%d\n",c);
 
-  unsigned char c3 = ~a;
-  //0000 0110 
-  //1111 1001 - ~6 = 249
+  //Bitwise OR
+  int c1 = a | b;
+  //0000 0110
+  //0000 0111
+  //0000 0111 = 6 | 7 == 7
+  printf("c1:%d\n", c1);
+
+  //Bitwise negation (inverter)
+  unsigned char c2 = ~a;
+  //0000 0110
+  //1111 1001 == 249
+  printf("c2:%u\n", c2);
+
+  //Bitwise XOR
+  int c3 = a ^ b;
+  //0000 0110
+  //0000 0111
+  //0000 0001 6 ^ 7 == 1
   printf("c3:%d\n", c3);
 
-  char c4 = a ^ b;
-  //0000 0110 
-  //0000 0111
-  //0000 0001 - 6 ^ 7 == 1
+  //Bitwise left shift
+  unsigned char c4 = a << 2; 
+  //0000 0110
+  //0001 1000 6 << 2 == 24
   printf("c4:%d\n", c4);
 
-  char c5 = a << 2;
-  //0000 0110 
-  //0001 1000 = 6 << 2 == 24
+  //Bitwise right shift
+  unsigned char c5 = a >> 2; 
+  //0000 0110
+  //0000 0001 6 >> 2 == 1
   printf("c5:%d\n", c5);
 
-  char c6 = a >> 1;
-  //0000 0110 
-  //0000 0011 = 6 >> 1 == 3
-  printf("c6:%d\n", c6);
+  unsigned char c6 = 1 << 7; //1000 0000 => 1 << x == 2 to power of x
 
-  char c7 = 1 << 7; //power of two 2 to the power of 7
+  //0000 0110
+  //0000 0001
+
+  unsigned char d = 6;
   for (int i = 7; i >= 0; i--) {
-    printf("%d", (a >> i) & 1);
+    printf("%d", (d >> i) & 1);
   }
+  printf("\n");
 
   return 0;
 }
