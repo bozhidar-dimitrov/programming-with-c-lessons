@@ -15,7 +15,7 @@ int main(void) {
 
 
   lights = lights | light4; //Turns on light4
-  lights = lights | light7; //Turns on light5
+  lights = lights | light7; //Turns on light7
   for (int i = 7; i >= 0; i--) {
     printf("%d", (lights >> i) & 1);
   }
