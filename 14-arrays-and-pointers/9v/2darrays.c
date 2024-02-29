@@ -32,7 +32,7 @@ int main(void) {
   printf("arr: %p\n", arr); //Similar to the 1d arrays, the 2d array name holds the initial address where the array is placed in the memory
   printf("&arr[0][0]: %p\n", &arr[0][0]); //prints the same address as the one holded by the 2d array name
   printf("arr + 1: %p\n", arr+1); //similar to 1d arrays address arithmetic offsets the initial adress, but here the offset is the size of the whole subarray
-  printf("*(arr + 1): %p\n", *(arr + 1)); //dereferencing the 2d array name gives pointer to an 1d array
+  printf("*(arr + 1): %p\n", *(arr + 1)); //dereferencing the 2d array name gives an 1d array
   printf("*(arr + 1) + 2: %p\n", *(arr + 1) + 2); //address arithmetic to 1d array pointer, offsets the address by the size of the elements in the 1d array
   printf("*(*(arr + 1) + 2): %d\n", *(*(arr + 1) + 2)); //prints the value of arr[1][2]
 
