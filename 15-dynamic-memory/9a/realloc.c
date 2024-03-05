@@ -24,11 +24,11 @@ int main(void) {
   }
 
   float * averageGrade = (float *)malloc(sizeof(float));
-  int sum = 0;
+  float sum = 0;
   for (int i = 0; i < count; i++) {
     sum += grades[i];
   }
-  *averageGrade = (float) sum / count;
+  *averageGrade =  sum / count;
 
   printf("The average grade is: %f:\n", *averageGrade);
 
@@ -60,7 +60,7 @@ int main(void) {
   for (int i = 0; i < count+3; i++) {
     sum += grades[i];
   }
-  *averageGrade = (float) sum / (count+3);
+  *averageGrade = sum / (count+3);
   printf("The average grade is: %f:\n", *averageGrade);
 
   
@@ -74,7 +74,7 @@ int main(void) {
   for (int i = 0; i < 2; i++) {
     sum += grades[i];
   }
-  *averageGrade = (float) sum / 2;
+  *averageGrade = sum / 2;
   printf("The average grade is: %f:\n", *averageGrade);
 
   free(averageGrade);

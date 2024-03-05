@@ -24,11 +24,11 @@ int main(void) {
   }
 
   float * averageGrade = (float *)malloc(sizeof(float));
-  int sum = 0;
+  float sum = 0;
   for (int i = 0; i < count; i++) {
     sum += grades[i];
   }
-  *averageGrade = (float) sum / count;
+  *averageGrade = sum / count;
 
   printf("The average grade is: %f:\n", *averageGrade);
 
