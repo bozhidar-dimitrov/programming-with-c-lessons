@@ -38,10 +38,10 @@ int main(void) {
     fwrite(&i, sizeof(int), 1, file);
 
     Patient patient = node->value;
-    fwrite(patient.name, sizeof(char), PATIENT_NAME_MAX_LENGTH + 1, file);
+    fwrite(patient.name, sizeof(char), PATIENT_NAME_MAX_LENGTH, file);
     fwrite(patient.EGN, sizeof(long), 1, file);
     fwrite(patient.age, sizeof(int), 1, file);
-    fwrite(patient.symptoms, sizeof(char), SYMPTOMS_MAX_LENGTH + 1, file);
+    fwrite(patient.symptoms, sizeof(char), SYMPTOMS_MAX_LENGTH, file);
   }
 
   fclose(file);
