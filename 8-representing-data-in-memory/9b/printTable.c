@@ -8,6 +8,8 @@ int main(void) {
   printf("%-10s %-10.2f %-10.2f %-10.2f\n", "Anna", 6.0, 4.0, 5.0);
 
   printf("%*s\n", 15, "Anna");
+  //Printing % in console
+  printf("%%\n");
 
   return 0;
 }
