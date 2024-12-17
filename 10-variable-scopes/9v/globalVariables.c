@@ -7,6 +7,10 @@ int testGlobal() {
   printf("In testGlobal: %d\n", coresCount);
 }
 
+void foo() {
+  printf("In globalVariables.c\n");
+}
+
 int main(void) {
 
   printf("In function main: %d\n", coresCount);
@@ -14,6 +18,11 @@ int main(void) {
 
   createNewThread();
   printf("Started threads: %d\n", threadCount);
+
+  setState(10);
+  printf("New state: %d\n", getState());
+
+  foo();
 
   return 0;
 }

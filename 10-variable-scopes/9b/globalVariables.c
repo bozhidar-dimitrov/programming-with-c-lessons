@@ -3,6 +3,10 @@
 
 int coresCount = 4;
 
+void foo() {
+  printf("In globalVariables.c \n");
+}
+
 void printCores() {
   printf("In print cores: %d\n", coresCount);
 }
@@ -13,6 +17,11 @@ int main(void) {
 
   createNewThread();
   printf("Threads count: %d\n", threadsCount);
+
+  setSharedState(10);
+  printf("New state: %d\n", getSharedState());
+
+  foo();
 
   return 0;
 }
