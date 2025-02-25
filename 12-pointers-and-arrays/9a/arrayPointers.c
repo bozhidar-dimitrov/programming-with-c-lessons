@@ -3,20 +3,25 @@
 int main(void) {
 
   int arr[4] = {1, 2, 3, 4};
-  int *p = arr; //Using simple pointer
 
-  int (*ptr)[4] = &arr; //Using array pointer
+  //The name of the array stores the address 
+  //of the array == the address of the first element 
+  //in the array
+  printf("The name of the array:%p\n", arr);
+  printf("&arr[0]:%p\n", &arr[0]);
 
-  printf("Arr address: %p\n", arr);
+  int **pp = &arr;
+  //Prints the address of the array
+  printf("pp:%p\n", pp);
+  //Offsets the pointer by 8 bytes == sizeof(int *);
+  printf("pp + 1:%p\n", pp + 1);
 
-  printf("Arr address stored in p: %p\n", p);
-  printf("Arr address stored in ptr: %p\n", *ptr);
-  //The above 3 lines print the same address
-
-  //The offset is 4 bytes = sizeof(int):
-  printf("Arr address stored in p + 1: %p\n", p+1);
-  //The offset is 16 bytes = 4 elements 4 bytes each:
-  printf("Arr address stored in ptr + 1: %p\n", ptr + 1);
+  int (*ptr)[4] = &arr;
+  //Prints the address of the array - the same as the address of the first element
+  printf("ptr:%p\n", ptr);
+  //This offsets the pointer by the whole size of 
+  //the array (4 elements * sizeof(int) == 16 bytes)
+  printf("ptr+1:%p\n", ptr + 1);
 
   return 0;
 }
