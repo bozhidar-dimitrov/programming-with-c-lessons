@@ -16,6 +16,10 @@ int main(void) {
 
   for (int i = 0; i < rows; i++) {
     p[i] = (int *) malloc(columns * sizeof(int));
+    if (p[i] == NULL) {
+      printf("Error allocating memory\n");
+      exit(1);
+    }
   }
 
   int number = 1;
@@ -34,8 +38,10 @@ int main(void) {
 
   for (int i = 0; i < rows; i++) {
     free(p[i]);
+    p[i] = NULL;
   }
   free(p);
+  p = NULL;
 
   return 0;
 }

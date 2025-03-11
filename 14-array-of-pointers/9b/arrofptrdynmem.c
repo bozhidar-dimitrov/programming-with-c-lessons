@@ -35,5 +35,12 @@ int main(void) {
     printf("\n");
   }
 
+  for (int i = 0; i < rowsCount; i++) {
+    free(ptr[i]);
+    ptr[i] = NULL;
+  }
+  free(ptr);
+  ptr = NULL;
+
   return 0;
 }
