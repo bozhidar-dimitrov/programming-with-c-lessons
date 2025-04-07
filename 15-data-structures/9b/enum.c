@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+enum weekday {
+  MONDAY = 1,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+  SATURDAY,
+  SUNDAY
+};
+
+/* Cannot use the constant names in other enums
+enum workday {
+  MONDAY = 1,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY
+};
+*/
+
+enum robotState {
+  TURNED_OFF = 0,
+  WORKING = 1,
+  CHARGING_THE_BATTERY = 1
+};
+
+typedef enum bool {
+  true = 1,
+  false = 0
+} Bool;
+
+int main(void) {
+  int inputDay = 0;
+  do {
+    printf("1 - Monday\n");
+    printf("2 - Tuesday\n");
+    printf("3 - Wednesday\n");
+    printf("4 - Thursday\n");
+    printf("5 - Friday\n");
+    printf("6 - Saturday\n");
+    printf("7 - Sunday\n");
+    printf("Please enter the day(1-7):");
+    scanf("%d", &inputDay);
+  } while (inputDay < 1 || inputDay > 7);
+
+  enum weekday currentDay = MONDAY;
+  currentDay = inputDay;
+
+  switch (inputDay)
+  {
+    case MONDAY :
+    case TUESDAY :
+    case WEDNESDAY :
+    case THURSDAY :
+    case FRIDAY :
+      printf("The robot is working \n");
+      break;
+    case SATURDAY :
+    case SUNDAY :
+      printf("The robot is charging the battery\n");
+      break;
+    default:
+      printf("Invalid input");
+      break;
+  }
+
+  enum robotState state = WORKING;
+  if (state) {
+    printf("The robot is turned on\n");
+  } else {
+    printf("The robot is turned off\n");
+  }
+
+  Bool robotIsWorking = true;
+  if (robotIsWorking) {
+    printf("The robot is working \n");
+  } else {
+    printf("The robot is not working \n");
+  }
+
+  return 0;
+}
