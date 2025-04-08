@@ -10,6 +10,16 @@ enum weekday {
   SUNDAY
 };
 
+/*
+enum workday {
+  MONDAY = 1,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY
+};
+*/
+
 enum robotState {
   TURNED_OFF = 0,
   WORKING = 1,
@@ -22,7 +32,6 @@ typedef enum bool {
 } Bool;
 
 int main(void) {
-
   enum weekday currenday = MONDAY;
 
   int dayInput = 0;
