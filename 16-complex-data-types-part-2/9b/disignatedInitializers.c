@@ -28,5 +28,25 @@ int main(void) {
   }
   printf("\n");
 
+  //Alternative syntax
+  int arr3[10] = {[1]3, [4]7, [7 ... 9]3};
+  for (int i = 0; i < 10; i++) {
+    printf("arr[%d] = %d\n", i, arr3[i]);
+  }
+
+  //Using designated initializers
+  Student petar = {
+    .number = 1, 
+    .fullName = "Patar", 
+    .averageGrade = 4.75
+  };
+
+  //Alternative syntax
+  Student petar2 = {
+    number : 1, 
+    fullName : "Patar", 
+    averageGrade : 4.75
+  };
+
   return 0;
 }
