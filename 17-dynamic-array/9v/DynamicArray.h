@@ -20,7 +20,7 @@ DynArrType popBack(DynamicArray * dynArr);
 DynArrType popFront(DynamicArray * dynArr);
 DynArrType pop(DynamicArray * dynArr, uint index);
 
-DynArrType get(DynamicArray * dynArr);
+DynArrType get(DynamicArray * dynArr, uint index);
 void set(DynamicArray * dynArr, uint index, DynArrType value);
 
 void release(DynamicArray * dynArr);
