@@ -54,3 +54,55 @@ void pushBack(DynamicArray * dynArr, DynArrType value) {
   resize(dynArr, newSize);
   dynArr->buffer[newSize-1] = value;
 }
+
+void push(DynamicArray * dynArr, uint index, DynArrType value) {
+  uint newSize = dynArr->size + 1;
+  resize(dynArr, newSize);
+  for (int i = newSize - 1; i > index; i--) {
+    dynArr->buffer[i] = dynArr->buffer[i-1];
+  }
+  dynArr->buffer[index] = value;
+}
+
+void pushFront(DynamicArray * dynArr, DynArrType value) {
+  push(dynArr, 0, value);
+}
+
+DynArrType popBack(DynamicArray * dynArr) {
+  DynArrType result = dynArr->buffer[dynArr->size - 1];
+  uint newSize = dynArr->size - 1;
+  resize(dynArr, newSize);
+
+  return result;
+}
+
+DynArrType pop(DynamicArray * dynArr, uint index) {
+  uint newSize = dynArr->size - 1;
+  DynArrType result = dynArr->buffer[index];
+  for (int i = index; i < newSize; i++) {
+    dynArr->buffer[i] = dynArr->buffer[i+1];
+  }
+  resize(dynArr, newSize);
+  return result;
+}
+
+DynArrType popFront(DynamicArray * dynArr) {
+  return pop(dynArr, 0);
+}
+
+DynArrType get(DynamicArray * dynArr, uint index) {
+  DynArrType element = dynArr->buffer[index];
+  return element;
+}
+
+void set(DynamicArray * dynArr, uint index, DynArrType value) {
+  dynArr->buffer[index] = value;
+}
+
+void release(DynamicArray * dynArr) {
+  free(dynArr->buffer);
+  dynArr->buffer = NULL;
+
+  dynArr->capacity = 0;
+  dynArr->size = 0;
+}
