@@ -4,6 +4,13 @@
 #include "util.h"
 #include "DynamicArray.h"
 
+void assertIndexInBounds(DynamicArray * dynArr, uint index) {
+  if (index >= dynArr->size) {
+    printf("Index out of bounds \n");
+    exit(1);
+  }
+}
+
 DynamicArray init(uint capacity) {
   if (capacity < 0) {
     printf("Invalid capacity\n");
@@ -56,6 +63,7 @@ void pushBack(DynamicArray * dynArr, DynArrType value) {
 }
 
 void push(DynamicArray * dynArr, uint index, DynArrType value) {
+  assertIndexInBounds(dynArr, index);
   uint newSize = dynArr->size + 1;
   resize(dynArr, newSize);
   for (int i = newSize - 1; i > index; i--) {
@@ -77,6 +85,7 @@ DynArrType popBack(DynamicArray * dynArr) {
 }
 
 DynArrType pop(DynamicArray * dynArr, uint index) {
+  assertIndexInBounds(dynArr, index);
   uint newSize = dynArr->size - 1;
   DynArrType result = dynArr->buffer[index];
   for (int i = index; i < newSize; i++) {
@@ -91,11 +100,13 @@ DynArrType popFront(DynamicArray * dynArr) {
 }
 
 DynArrType get(DynamicArray * dynArr, uint index) {
+  assertIndexInBounds(dynArr, index);
   DynArrType element = dynArr->buffer[index];
   return element;
 }
 
 void set(DynamicArray * dynArr, uint index, DynArrType value) {
+  assertIndexInBounds(dynArr, index);
   dynArr->buffer[index] = value;
 }
 
