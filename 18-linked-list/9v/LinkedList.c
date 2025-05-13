@@ -75,6 +75,7 @@ ListType popFront(LinkedList * list) {
 
   ListType result = nodeToDelete->value;
   free(nodeToDelete);
+  list->size--;
   return result;
 }
 
@@ -91,5 +92,5 @@ ListType pop(LinkedList * list, uint index) {
 }
 
 void release(LinkedList * list) {
-  
+
 }
