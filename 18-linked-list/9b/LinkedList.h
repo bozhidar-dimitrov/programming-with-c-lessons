@@ -24,6 +24,8 @@ ListType popBack(LinkedList * list);
 ListType popFront(LinkedList * list);
 ListType pop(LinkedList * list, uint index);
 
+Node * getNode(LinkedList * list, uint index);
+
 ListType get(LinkedList * list, uint index);
 void set(LinkedList * list, uint index, ListType value);
 
