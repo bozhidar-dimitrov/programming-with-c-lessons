@@ -23,5 +23,18 @@ int main(void) {
 
   printLinkedList(&linkedList);
 
+  struct Node * secondNode = getNode(&linkedList, 1);
+  printf("Assert second node value == 15:%d\n", secondNode->value == 15);
+
+  ListType structValue = get(&linkedList, 1);
+  printf("Assert second value == 15:%d\n", structValue == 15);
+
+  push(&linkedList, 1, 99);
+  printLinkedList(&linkedList);
+
+  ListType firstValue = popFront(&linkedList);
+  printf("Assert first value == 30:%d\n", firstValue == 30);
+  printLinkedList(&linkedList);
+
   return 0;
 }

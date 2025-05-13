@@ -64,7 +64,7 @@ void push(LinkedList * list, uint index, ListType value) {
 }
 
 void pushBack(LinkedList * list, ListType value) {
-  
+  push(list, list->size, value);
 }
 
 ListType popFront(LinkedList * list) {
@@ -79,7 +79,18 @@ ListType popFront(LinkedList * list) {
 }
 
 ListType pop(LinkedList * list, uint index) {
+  if (index == 0) {
+    return popFront(list);
+  } else {
+    Node * prevNode = getNode(list, index-1);
+    Node * nodeToDelete = prevNode->next;
 
+    prevNode->next = nodeToDelete->next;
+    ListType result = nodeToDelete->value;
+    free(nodeToDelete);
+
+    return result;
+  }
 }
 
 ListType popBack(LinkedList * list) {
@@ -90,4 +101,6 @@ void set(LinkedList * list, uint index, ListType value) {
 
 }
 
-void release(LinkedList * list);
+void release(LinkedList * list) {
+
+}
