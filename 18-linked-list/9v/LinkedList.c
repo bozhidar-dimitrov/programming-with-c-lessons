@@ -25,6 +25,7 @@ static Node * createNode(ListType value) {
     exit(1);
   }
   newNode->value = value;
+  newNode->next = NULL;
 
   return newNode;
 }
