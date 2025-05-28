@@ -1,0 +1,2 @@
+Today it was rainy and I was late for the bus
+Today we are learning working with files in C
