@@ -1,1 +1,4 @@
 1 Anna 5.75
+2 Boris 5.32
+3 Georgi 5.32
+4 Martin 4.75
