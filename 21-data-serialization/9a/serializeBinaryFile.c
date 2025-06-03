@@ -46,7 +46,6 @@ int main(void) {
     fwrite(patient.symptoms, sizeof(char), SYMPTOMS_MAX_LENGTH, file);
   }
 
-
   fclose(file);
   release(&list);
   return 0;
