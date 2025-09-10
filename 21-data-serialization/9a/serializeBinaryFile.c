@@ -18,9 +18,6 @@ int main(void) {
   pushBack(&list, patients[1]);
   pushBack(&list, patients[2]);
 
-  
-
-
   FILE * file = fopen("patients.bin", "wb");
   assertFileOpen(file);
 
