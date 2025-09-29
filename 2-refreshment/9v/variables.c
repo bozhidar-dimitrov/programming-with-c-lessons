@@ -11,7 +11,7 @@ int main(void) {
 
   printf("A=%d\n",a);
   printf("B=%.2f\n",b);
-  printf("C=%C\n",c);
+  printf("C=%c\n",c);
 
   printf("D=%ld\n",d);
   printf("E=%.2lf\n",e);
