@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define SUM(A, B) ((A) + (B))
+#define CONCAT(X, Y) X ## Y
 
 int main(void) {
 
