@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void printState(char lightsState) {
-  char lightStateBits = sizeof(lightsState) * 8;
+  size_t lightStateBits = sizeof(lightsState) * 8;
   for (int i = 0; i < lightStateBits; i++) {
     printf("Light %d: %u\n", i+1, (lightsState >> i) & 1);
   }
