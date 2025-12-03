@@ -9,5 +9,17 @@ int main(void) {
 
   printf("unsigned long long max: %llu\n", ULLONG_MAX);
 
+  printf("short max: %hd\n", SHRT_MAX);
+
+  char a = CHAR_MAX;
+  printf("%d\n", a);
+
+  a++;
+  printf("%d\n", a++);
+
+  for (char i = 0; 1; i++) {
+    printf("%d ", i);
+  }
+
   return 0;
 }

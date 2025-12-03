@@ -2,6 +2,11 @@
 
 int main(void) {
 
+  //1byte = 8bit = 0000 0000 (0000 0001, 0000 0010, 0000 0011 ...) = 256 числа можем да представимю
+  //1byte = Мin == 0000 0000 = 0, Max == 1111 1111 == 255
+  //char should be able to work with negative numbers so:
+  //0 - 127 - we will use for positive numbers
+  //128 - 255 - we will use for negative numbers
   //Binary: 0000 0110
   char a = 6;
 
@@ -13,7 +18,7 @@ int main(void) {
   //one's complement of 0 = 1111 1111 =>
   //We have two zeros (+0) 0000 0000 and (-0) 1111 1111 =>
   //256 values - 2 for zeros => 254 other values  =>
-  //обхвата от стойности е: (-127, 0) и (0, +127);
+  //обхвата от стойности е: (-127, 0) и (0, +127) for 1 byte;
 
   //Two's complement - допълнителен код
   //Two's complement = One's complement + 1;

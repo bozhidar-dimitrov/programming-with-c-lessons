@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+#pragma pack(push, 1)
+struct someStruct {
+  char a;
+  char b;
+  int c;
+};
+#pragma pack(pop)
+
 int sortArray(int arr[]) {
   size_t arrSize = sizeof(arr);
   printf("Arr size in function: %zu\n", arrSize);
@@ -19,6 +27,9 @@ int main(void) {
   printf("Arr len: %zu \n", len);
 
   sortArray(arr);
+
+  size_t someStructSize = sizeof(struct someStruct);
+  printf("Size of struct: %zu\n", someStructSize);
 
   return 0;
 }
