@@ -8,4 +8,8 @@ extern int threadsCount;
 //extern int threadsCount = 0;
 void createNewThread();
 
+void setCount(int a);
+
+int getCount();
+
 #endif // __THREADS_H__

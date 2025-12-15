@@ -4,9 +4,16 @@
 //Uninitialized global variable are automatically initialized to 0
 int simpleGlobalVariable;
 
+int count = 0;
+
 void incrementGlobalVariable() {
   simpleGlobalVariable++;
 }
+
+void foo() {
+  printf("Inside globalVariables.c \n");
+}
+
 
 int main(void) {
   int uninitializedLocalVariable;
@@ -20,5 +27,8 @@ int main(void) {
   createNewThread();
 
   printf("Running threads: %d\n", threadsCount);
+
+  printf("Count in global variables: %d\n", count);
+  printf("Count in threads.c: %d\n", getCount());
   return 0;
 }
