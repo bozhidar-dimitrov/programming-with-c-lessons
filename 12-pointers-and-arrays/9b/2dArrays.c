@@ -1,12 +1,13 @@
 #include <stdio.h>
 
-void print2dArray(char (*arr)[3], int rowsCount) {
+void print2dArray(char (*ptr)[3], int rowsCount) {
   for (int i = 0; i < rowsCount; i++) {
     for (int j = 0; j < 3; j++) {
-      printf("%d ", *(*(arr + i) + j));
+      printf("%d ", *(*(ptr+i) + j));
     }
     printf("\n");
   }
+  printf("\n");
 }
 
 int main(void) {
@@ -22,41 +23,40 @@ int main(void) {
     }
     printf("\n");
   }
+  printf("\n");
 
   printf("Name of 2d array: %p\n", arr);
   printf("&arr[0][0]: %p\n", &arr[0][0]);
 
-  printf("arr + 1: %p\n", arr + 1);
+  //Because 2d arrays is array of arrays,
+  //Each element of the array is another array,
+  //So the offset is a whole subarray:
+  printf("arr+1: %p\n", arr+1);
   printf("&arr[1][0]: %p\n", &arr[1][0]);
-  //So the name of the arr acts as a pointer to an array:
 
-  printf("*(arr + 1): %p\n", *(arr + 1));
+  //So the address arithmetic is the same as arraypointers
+  char (*p)[3] = arr;
+
+  printf("*(arr+1): %p\n", *(arr+1));
   printf("&arr[1][0]: %p\n", &arr[1][0]);
-  //We again recieve the same address, but the pointer type has changed:
-  //from array pointer to normal pointer (or the same as 1d array)
+  //The address is the same: but the pointer type changes,
+  //from array pointer to normal pointer
 
-  printf("*(arr + 1): %p\n", *(arr + 1) + 2);
+  printf("*(arr+1): %p\n", *(arr+1) + 2);
   printf("&arr[1][2]: %p\n", &arr[1][2]);
 
-  printf("*(*(arr + 1) + 2): %d\n", *(*(arr + 1) + 2));
-  printf("arr[1][2]:%d\n", arr[1][2]);
+  printf("*(*(arr+1) + 2): %d\n", *(*(arr+1) + 2));
+  printf("arr[1][2]: %d\n", arr[1][2]);
 
-  printf("\n");
-
-  //Address arithmetic for two dimensional arrays
   for (int i = 0; i < 2; i++) {
     for (int j = 0; j < 3; j++) {
-      printf("%d ", *(*(arr + i) + j));
+      printf("%d ", *(*(arr+i) + j));
     }
     printf("\n");
   }
-
-  //We can store the name of 2d array in array pointer:
-  char (*ptr)[3] = arr;
+  printf("\n");
 
   print2dArray(arr, 2);
-
-  printf("\n");
 
   char arr2[4][3] = {
     {1, 2, 3},
@@ -64,8 +64,8 @@ int main(void) {
     {7, 8, 9},
     {10, 11, 12}
   };
-  print2dArray(arr2, 4);
 
+  print2dArray(arr2, 4);
 
   return 0;
 }
