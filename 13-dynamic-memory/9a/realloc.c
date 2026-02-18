@@ -35,6 +35,7 @@ int main(void) {
   //If we pass NULL as first argument - realloc behaves the same as malloc
   float * temp = (float *)realloc(students, sizeof(float) * (studentsCount + additionalMarksCount));
   if (temp == NULL) {
+    free(students);
     printf("Error allocating memory \n");
     exit(1);
   }
