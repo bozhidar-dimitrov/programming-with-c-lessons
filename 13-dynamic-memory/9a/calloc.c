@@ -8,7 +8,7 @@ int main(void) {
   printf("Enter student's count:");
   scanf("%d", &studentsCount);
   //Returns void pointer to the new dynamic memorys
-  float * students = (float *)calloc(students, sizeof(float));
+  float * students = (float *)calloc(studentsCount, sizeof(float));
   //If there is no memory or error it will return NULL
   //So the student's pointer potentially can be NULL
   if (students == NULL) {
