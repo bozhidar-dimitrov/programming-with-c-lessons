@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 union simple {
   int x;
@@ -7,8 +6,8 @@ union simple {
 };
 
 union complex {
-  char x;
-  int y;
+  int x;
+  long long y;
   double z;
 };
 
@@ -50,7 +49,8 @@ void printStudent(struct Student student){
   printf("Average grade:%f\n", student.averageGrade);
   printf("---------------------\n");
 }
-//189.127.1.1
+
+//192.168.1.1
 union IpAddress{
   char asArray[4];
   int asNumber;
@@ -59,31 +59,30 @@ union IpAddress{
 int main(void) {
 
   union simple simpleUnion;
-  simpleUnion.x = 5;
-  simpleUnion.y = 7;
-
+  simpleUnion.x = 10;
+  simpleUnion.y = 20;
+  
   printf("simpleUnion.x:%d\n", simpleUnion.x);
   printf("simpleUnion.y:%d\n", simpleUnion.y);
 
   union complex complexUnion;
-  complexUnion.z = 18.9;
-  complexUnion.y = 12312324;
-  printf("complexUnion.z: %lf\n", complexUnion.z);
+  complexUnion.z = 5.5;
+  complexUnion.y = 13123123123123;
+
+  printf("complexUnion.y:%lld\n",complexUnion.y);
+  printf("complexUnion.z:%lf\n", complexUnion.z);
 
   struct Student nikolai;
-  strcpy(nikolai.id.EGN, "1231232");
   nikolai.idType = EGN;
+  strcpy(nikolai.id.EGN, "1231232");
   strcpy(nikolai.fullname, "Nikolai");
   nikolai.averageGrade = 5.5;
 
   struct Student anna;
-  strcpy(anna.id.PEN, "123g1a232");
   anna.idType = PEN;
+  strcpy(anna.id.PEN, "123g1a232");
   strcpy(anna.fullname, "Anna");
   anna.averageGrade = 5.1;
-
-  printStudent(nikolai);
-  printStudent(anna);
 
   union IpAddress address1;
   address1.asArray[0] = 192;
@@ -100,7 +99,6 @@ int main(void) {
   if (address1.asNumber == address2.asNumber) {
     printf("The ip addresses are equal\n");
   }
-
 
   return 0;
 }
