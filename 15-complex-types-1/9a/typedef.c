@@ -24,7 +24,7 @@ ucll sum(ucll a, ucll b) {
 }
 
 int main(void) {
-
+  
   ucll a = 15;
   ucll b = 20;
 
