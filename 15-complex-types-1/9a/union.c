@@ -12,7 +12,7 @@ union complex {
   double z;
 };
 
-union Id{
+union Id {
   char EGN[10];
   char PEN[15];
 };
@@ -100,7 +100,6 @@ int main(void) {
   if (address1.asNumber == address2.asNumber) {
     printf("The ip addresses are equal\n");
   }
-
 
   return 0;
 }
