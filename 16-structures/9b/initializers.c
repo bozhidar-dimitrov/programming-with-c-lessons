@@ -4,68 +4,67 @@
 #define MAX_NAME_LENGTH 50
 #define MAX_STUDENTS_PER_CLASS 3
 
-typedef struct student {
+typedef struct {
   char name[MAX_NAME_LENGTH + 1];
-  unsigned int number;
+  unsigned short number;
   float averageGrade;
 } Student;
 
-typedef struct studentClass {
+typedef struct {
   Student students[MAX_STUDENTS_PER_CLASS];
+  unsigned short studentsCount;
   char classLetter;
-  unsigned int studentsCount;
-  unsigned int classNumber;
+  unsigned short classNumber;
 } StudentClass;
 
 int main(void) {
 
+  //Initializing array using array literal (array initializer)
   int arr[3] = {1, 2, 3};
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0 ; i < 3; i++){
     printf("%d ", arr[i]);
   }
   printf("\n");
 
   int arr1[1000];
-  for (int i = 0; i < 1000; i++) {
+  for (int i = 0 ; i < 1000; i++){
     printf("%d ", arr1[i]);
   }
   printf("\n");
 
   int arr2[5] = {1, 2, 3};
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0 ; i < 5; i++){
     printf("%d ", arr2[i]);
   }
   printf("\n");
 
   int arr3[100] = {0};
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0 ; i < 100; i++){
     printf("%d ", arr3[i]);
   }
   printf("\n");
 
-  Student boris;
-  boris.number = 4;
-  boris.averageGrade = 5.5;
-  strcpy(boris.name, "Boris"); 
+  Student stefan;
+  stefan.number = 22;
+  stefan.averageGrade = 5.5;
+  strcpy(stefan.name, "Stefan");
 
-  Student nikola = {"Nikola", 22, 5.5};
+  Student georgi = {"Georgi", 10, 5.5};
 
-  StudentClass studentClass = {
+  StudentClass b9 = {
     {
-      boris, 
-      nikola, 
+      stefan, 
+      georgi, 
       {
-        "Elitsa", 
-        13, 
+        "Deya", 
+        12, 
         5.5
       }
     },
-    'a',
     3,
+    'b',
     9
   };
-
-  printf("Elitsa's average grade: %f\n", studentClass.students[2].averageGrade);
 
   return 0;
 }

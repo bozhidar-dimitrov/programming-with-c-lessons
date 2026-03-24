@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAX_STUDENT_NAME_LENGTH 50
+#define MAX_NAME_LENGTH 50
 #define MAX_STUDENTS_PER_CLASS 27
 #define MAX_TEACHER_NAME_LENGTH 50
 #define TEACHING_SUBJECT_NAME_LENGTH 30
@@ -12,7 +12,7 @@
 #define MAX_ADDRESS_LENGTH 100
 
 typedef struct {
-  char name[MAX_STUDENT_NAME_LENGTH + 1];
+  char name[MAX_NAME_LENGTH + 1];
   unsigned int number;
   float averageGrade;
 } Student;
