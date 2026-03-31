@@ -12,7 +12,7 @@ DynamicArray init(uint capacity) {
   };
 
   if (dynArray.capacity > 0) {
-    dynArray.buffer = (DynArrType *)(dynArray.capacity, sizeof(DynArrType));
+    dynArray.buffer = (DynArrType *)calloc(dynArray.capacity, sizeof(DynArrType));
     ASSERT_ALLOC(dynArray.buffer);
   }
   

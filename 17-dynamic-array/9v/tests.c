@@ -28,7 +28,6 @@ void testDynArrayInitializationWithCapacityIsEqualToZero() {
   ASSERT_TEST("Initial buffer with capacity == 0 should be equal to NULL", dynArr.buffer == NULL);
 }
 
-//Test driven development
 int main(void) {
 
   testDynArrayInitializationWithCapacityGreaterThanZero();
