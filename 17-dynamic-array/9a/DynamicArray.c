@@ -59,3 +59,13 @@ void pushBack(DynamicArray * dynArr, DynArrType value) {
   resize(dynArr, newSize);
   dynArr->buffer[oldSize] = value;
 }
+
+void push(DynamicArray * dynArr, uint index, DynArrType value) {
+  uint oldSize = dynArr->size;
+  uint newSize = oldSize + 1;
+  resize(dynArr, newSize);
+  for (int i = newSize - 1; i > index; i--) {
+    dynArr->buffer[i] = dynArr->buffer[i - 1];
+  }
+  dynArr->buffer[index] = value;
+}
