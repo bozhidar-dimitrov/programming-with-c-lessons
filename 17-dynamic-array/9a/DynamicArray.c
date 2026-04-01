@@ -69,3 +69,17 @@ void push(DynamicArray * dynArr, uint index, DynArrType value) {
   }
   dynArr->buffer[index] = value;
 }
+
+DynArrType pop(DynamicArray * dynArr, uint index){
+  assertIndexInBounds(dynArr, index);
+  DynArrType value = dynArr->buffer[index];
+  for(uint i=index; i<dynArr->size; i++){
+    dynArr->buffer[i]=dynArr->buffer[i+1];
+  }
+
+  uint oldSize = dynArr->size;
+  uint newSize = oldSize - 1;
+  resize(dynArr, newSize);
+  return value;
+}
+
