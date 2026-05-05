@@ -12,16 +12,16 @@ LinkedList init() {
 }
 
 static Node * createNode(ListType value) {
-  Node * node = (Node *)malloc(sizeof(Node));
-  if (node == NULL) {
+  Node * newNode = (Node *)malloc(sizeof(Node));
+  if (newNode == NULL){
     printf("Error allocating memory \n");
     exit(1);
   }
 
-  node->value = value;
-  node->next = NULL;
+  newNode->value = value;
+  newNode->next = NULL;
 
-  return node;
+  return newNode;
 }
 
 void pushFront(LinkedList * list, ListType value) {
@@ -40,6 +40,7 @@ Node * getNode(LinkedList * list, uint index) {
   for (int i = 0; i < index; i++) {
     current = current->next;
   }
+
   return current;
 }
 
@@ -58,7 +59,7 @@ void push(LinkedList * list, uint index, ListType value) {
     pushFront(list, value);
   } else {
     Node * node = createNode(value);
-    Node * prevNode = getNode(list, index-1);
+    Node * prevNode = getNode(list, index - 1);
     node->next = prevNode->next;
     prevNode->next = node;
     list->size++;
@@ -66,16 +67,13 @@ void push(LinkedList * list, uint index, ListType value) {
 }
 
 void pushBack(LinkedList * list, ListType value) {
-  
+  push(list, list->size, value);
 }
 
 ListType popFront(LinkedList * list) {
-  if (list->size == 0) {
-    printf("Cannot delete first element of empty list\n");
-    exit(1);
-  }
   Node * nodeToDelete = list->head;
   list->head = nodeToDelete->next;
+
   ListType result = nodeToDelete->value;
   free(nodeToDelete);
   list->size--;
@@ -83,23 +81,7 @@ ListType popFront(LinkedList * list) {
 }
 
 ListType pop(LinkedList * list, uint index) {
-  if (index >= list->size) {
-    printf("Index out of bounds!");
-    exit(1);
-  }
 
-  if (index == 0) {
-    return popFront(list);
-  } else {
-    Node * prevNode = getNode(list, index - 1);
-    Node * nodeToDelete = prevNode->next;
-    prevNode->next = nodeToDelete->next;
-
-    ListType result = nodeToDelete->value;
-    free(nodeToDelete);
-    list->size--;
-    return result;
-  }
 }
 
 ListType popBack(LinkedList * list) {
