@@ -1,0 +1,4 @@
+Today it was sunny but the wind was cold
+I had programming class today
+And we were learning about text files in C
+And I went home afterwords
