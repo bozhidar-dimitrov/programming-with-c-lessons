@@ -1,1 +1,5 @@
-1 Stefan 5.5000
+1 Aleksandar 5.50000
+2 Aleksandar 5.60000
+3 Alina 5.70000
+4 Daniel 5.70000
+5 Boris 5.80000
