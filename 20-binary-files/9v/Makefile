@@ -1,4 +1,4 @@
-all: readParticipants.out writeParticipants.out modifyParticipants.out usingFtell.out writeParticipantsWithoutCount.out
+all: readParticipants.out writeParticipants.out modifyParticipants.out usingFtell.out writeParticipantsWithoutCount.out readOneAtATime.out
 
 readParticipants.out: readParticipants.c Date.o Participant.o
 	gcc readParticipants.c Date.o Participant.o -o readParticipants.out
@@ -14,6 +14,9 @@ modifyParticipants.out: modifyParticipants.c Date.o Participant.o
 
 usingFtell.out: usingFtell.c Date.o Participant.o
 	gcc usingFtell.c Date.o Participant.o -o usingFtell.out
+
+readOneAtATime.out: readOneAtATime.c Date.o Participant.o
+	gcc readOneAtATime.c Date.o Participant.o -o readOneAtATime.out
 
 Date.o: Date.c Date.h
 	gcc -c Date.c -o Date.o

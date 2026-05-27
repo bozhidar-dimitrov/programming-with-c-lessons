@@ -8,14 +8,14 @@ int main(void) {
 
   FILE * file = fopen("maraton.bin", "rb+");
   if (file == NULL) {
-    printf("Error opening a file. \n");
+    printf("Error opening a file \n");
     exit(1);
   }
 
   /**
    * fseek whence:
    * SEEK_SET - from the beginning of the file
-   * SEEK_CUR - from the position of the current cursor
+   * SEEK_CUR - from the current position of the cursor
    * SEEK_END - from the end of the file
    */
   fseek(file, sizeof(Date) + sizeof(int), SEEK_SET);
@@ -25,18 +25,15 @@ int main(void) {
 
   printParticipant(&firstParticipant);
 
+  fseek(file, -sizeof(Participant), SEEK_CUR);
+
   Participant newParticipant = {
-    .number = 20,
-    .name = "Nikola",
-    .timeInMinutes = 300
+    .number = 1,
+    .name = "Siyana Ilievska",
+    .timeInMinutes = 530
   };
 
-  fseek(file, -sizeof(Participant), SEEK_CUR);
   fwrite(&newParticipant, sizeof(Participant), 1, file);
-
-  //rewind - returns the cursor at the begging of the file
-  //equivelent to fseek(file, 0, SEEK_SET);
-  rewind(file);
 
   fclose(file);
 
