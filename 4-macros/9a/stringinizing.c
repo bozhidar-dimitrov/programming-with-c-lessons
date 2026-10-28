@@ -12,10 +12,10 @@ int main(void) {
     printf("%d\n", FOO(something));
     printf("%s\n", BAR(something));
 
-    DEBUG_INT(something);
-
     printf("Hello, world\n");
     printf("Hello" ", world\n");
+
+    DEBUG_INT(something);
 
     return 0;
 }
