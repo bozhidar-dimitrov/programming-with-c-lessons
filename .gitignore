@@ -12,6 +12,7 @@
 *.out
 *.o
 *.a
+*.exe
 
 tasks.json
 settings.json
