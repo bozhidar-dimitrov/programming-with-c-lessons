@@ -1,9 +1,12 @@
 #include <stdio.h>
-#include "person.h"
+#include "student.h"
+#include "teacher.h"
 
 int main(void) {
 
-    struct Person person;
+    Person person;
+    Student ivan;
+    Teacher bozhidar;
 
     return 0;
 }
