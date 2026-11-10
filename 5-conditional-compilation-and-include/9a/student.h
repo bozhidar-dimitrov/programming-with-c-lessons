@@ -1,3 +1,5 @@
+#ifndef STUDENT_H_
+#define STUDENT_H_
 #include "person.h"
 
 typedef struct {
@@ -5,3 +7,5 @@ typedef struct {
     int number;
     float averageGrade;
 } Student;
+
+#endif
