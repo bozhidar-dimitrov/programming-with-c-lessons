@@ -14,5 +14,7 @@
 *.a
 *.exe
 
+*.tmp
+
 tasks.json
 settings.json
